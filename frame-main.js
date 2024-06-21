@@ -5,6 +5,10 @@
 
 import { dotnet, exit } from './_framework/dotnet.js'
 
+function log (text) {
+    document.querySelector("span").textContent += text + "\n";
+}
+
 class FrameApp {
     async init({ getAssemblyExports }) {
         const exports = await getAssemblyExports("Wasm.Browser.Bench.Sample.dll");
@@ -12,9 +16,7 @@ class FrameApp {
     }
 
     reachedCallback() {
-        if (window.parent != window) {
-            window.parent.resolveAppStartEvent("reached");
-        }
+        log("// reached");
     }
 }
 
@@ -22,9 +24,7 @@ let mute = false;
 try {
     globalThis.frameApp = new FrameApp();
     globalThis.frameApp.ReachedCallback = globalThis.frameApp.reachedCallback.bind(globalThis.frameApp);
-    if (window.parent != window) {
-        window.addEventListener("pageshow", event => { window.parent.resolveAppStartEvent("pageshow"); })
-    }
+    window.addEventListener("pageshow", event => { log("// pageshow"); })
 
     window.muteErrors = () => {
         mute = true;
@@ -36,16 +36,14 @@ try {
             // diagnosticTracing:true,
         })
         .withModuleConfig({
-            printErr: () => undefined,
-            print: () => undefined
+            printErr: log,
+            print: log
         })
         .create();
 
     await frameApp.init(runtime);
 }
 catch (err) {
-    if (!mute) {
-        console.error(`WASM ERROR ${err}`);
-    }
+    log(`WASM ERROR ${err}`);
     exit(1, err);
 }
