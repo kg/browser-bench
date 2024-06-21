@@ -1,18 +1,18 @@
 {
   "mainAssemblyName": "Wasm.Browser.Bench.Sample.dll",
   "resources": {
-    "hash": "sha256-+OOVTm9QmGKlId5QHx7u6Xx1OplO7Od+IKyYyit61eo=",
+    "hash": "sha256-1SeXQI+Npq1LxFPg8KtPIQLP3M+rB+ERg+kWYtji1m0=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-/APEXT/hqfHIhVwywVdANMjX02DrrgG0Hu6q2NSg1wA="
+      "dotnet.native.js": "sha256-XoSu2s2zdewbuIepc6FCUAYcByEQ9buurhjOkN1z6LI="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.js": "sha256-vcugr7QHYNjHrgvDmbYmv837zdGih2brhYdB+RbZOyw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-zwUNkaIw7tMSvHz7biAZZI7BEDcmjAAOyX50mjrZbZQ="
+      "dotnet.native.wasm": "sha256-SdqEmK64QvshtebAT8X9XFTCCXWjr/EArj/EJTtQ34Y="
     },
     "wasmSymbols": {
-      "dotnet.native.js.symbols": "sha256-Rr9U15mVL1Zwl4HiMQNImt9xmmZQFTJmweOVLpZ34JI="
+      "dotnet.native.js.symbols": "sha256-KUma4Qww0E7kc5d/6N7lvCajn90Z/K1oISJFgK0UyvM="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
